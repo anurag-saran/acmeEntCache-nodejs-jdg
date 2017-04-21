@@ -11,12 +11,13 @@ var jdgPort = process.env.DATAGRID_HOTROD_SERVICE_PORT || 11222;
 var PORT = process.env.PORT || 8080;
 app.use(bodyParser.json);
 
-var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
+
 
 // GET /customer/:id
 app.get('/customer/:id', function(req, res) {
-    console.log("*****R// GET /customer/:id.")
+    console.log("*****// GET /customer/:id.")
     var custID = req.params.id;
+    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
 	connected.then(function (client) {
         client.get(custID).then(
             function(value) {
@@ -37,8 +38,8 @@ app.get('/customer/:id', function(req, res) {
 app.post('/customer', function(req, res) {
     var body = reg.body;
     var custID = body.custID;
-    console.log("body:"+body);
-    
+    console.log("****body:"+body);
+    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
 	connected.then(function (client) {
         client.get(custID).then(
             function(value) {
