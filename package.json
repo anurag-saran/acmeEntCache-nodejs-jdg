@@ -1,5 +1,5 @@
 {
-  "name": "Acme Enterprise Cache",
+  "name": "acmeEntCache-nodejs-jdg",
   "version": "0.0.1",
   "private": true,
   "description": "NodeJS microservice with persistence on JDG",
