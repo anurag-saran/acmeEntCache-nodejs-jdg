@@ -15,14 +15,17 @@ var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2
 
 // GET /customer/:id
 app.get('/customer/:id', function(req, res) {
+    console.log("*****R// GET /customer/:id.")
     var custID = req.params.id;
 	connected.then(function (client) {
         client.get(custID).then(
             function(value) {
                 if(value == undefined)  {
+                    console.log("*****Record Not Found.")
                     //res.json(util.format('Customer Not Found %s!', custID));
                     res.status(404).send();
                 } else {
+                    console.log("*****Record Found.")
                     res.json(value);
                     
                 }
