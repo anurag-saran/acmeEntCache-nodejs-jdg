@@ -1,0 +1,19 @@
+{
+  "name": "Acme Enterprise Cache",
+  "version": "0.0.1",
+  "private": true,
+  "description": "NodeJS microservice with persistence on JDG",
+  "keywords": [],
+  "author": "asaran@redhat.com",
+  "license": "Apache 2.0",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.13.3",
+    "infinispan": " ^0.3.0",
+    "swagger-express-mw": "^0.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
