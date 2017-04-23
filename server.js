@@ -21,13 +21,13 @@ app.get('/test', function(req, res) {
 	res.send('Webpage API Root /test');
 });
 
-//// GET /customer/:id
-//app.get('/customer/:id', function(req, res) {
-//    console.log("*****// GET /customer/:id.");
-//    var custID = req.params.id;
-//    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
-//    console.log("#### connected"+JSON.stringify(connected))
-//    
+// GET /customer/:id
+app.get('/customer/:id', function(req, res) {
+    console.log("*****// GET /customer/:id.");
+    var custID = req.params.id;
+    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
+    console.log("#### connected"+JSON.stringify(connected))
+    
 //	connected.then(function (client) {
 //        client.get(custID).then(
 //            function(value) {
@@ -43,7 +43,7 @@ app.get('/test', function(req, res) {
 //                }
 //            });
 //        });
-//});
+});
 
 // POST /customer
 //app.post('/customer', function(req, res) {
@@ -63,7 +63,7 @@ app.get('/test', function(req, res) {
 //})
 
 app.listen(PORT, function() {
-		console.log('Express listening on port :' + PORT + '!');
+		console.log('AcmeCache :Express listening on port :' + PORT + '!');
 	});
 
 
