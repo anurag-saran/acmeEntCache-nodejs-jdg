@@ -2,7 +2,7 @@
 var infinispan = require('infinispan');
 var express = require('express');
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 var util = require('util');
 var bodyParser = require('body-parser');
@@ -22,12 +22,12 @@ app.get('/test', function(req, res) {
 });
 
 // GET /customer/:id
-app.get('/customer/:id', function(req, res) {
-    console.log("*****// GET /customer/:id.");
-    var custID = req.params.id;
-    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
-    console.log("#### connected"+JSON.stringify(connected))
-    
+//app.get('/customer/:id', function(req, res) {
+//    console.log("*****// GET /customer/:id.");
+//    var custID = req.params.id;
+//    var connected = infinispan.client({port: jdgPort, host: jdgHost}, {version: '2.2'});
+//    console.log("#### connected"+JSON.stringify(connected))
+//    
 //	connected.then(function (client) {
 //        client.get(custID).then(
 //            function(value) {
