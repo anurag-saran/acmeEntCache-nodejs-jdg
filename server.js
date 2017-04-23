@@ -2,7 +2,9 @@
 var infinispan = require('infinispan');
 var express = require('express');
 var app = express();
-var PORT = process.env.PORT || 8080;
+//var PORT = process.env.PORT || 8080;
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 var util = require('util');
 var bodyParser = require('body-parser');
@@ -62,6 +64,6 @@ app.get('/test', function(req, res) {
 //        })
 //})
 
-app.listen(PORT, function() {
+app.listen(PORT, IP_ADDRESS, function() {
 		console.log('AcmeCache :Express listening on port :' + PORT + '!');
 	});
