@@ -43,7 +43,7 @@ app.get('/test', function(req, res) {
 //                }
 //            });
 //        });
-});
+//});
 
 // POST /customer
 //app.post('/customer', function(req, res) {
@@ -65,5 +65,3 @@ app.get('/test', function(req, res) {
 app.listen(PORT, function() {
 		console.log('AcmeCache :Express listening on port :' + PORT + '!');
 	});
-
-
